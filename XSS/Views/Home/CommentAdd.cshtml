@@ -25,8 +25,13 @@
 
     <h2> REFLECTED  ATTACK</h2>
 
-    <strong>@Html.Raw(ViewBag.Name)</strong>
-    <hr />
-    <strong>@Html.Raw(ViewBag.Comment)</strong>
+@if (ViewBag.Comment != null)
+    {
+        foreach (var item in ViewBag.Comment as string[])
+        {
+            <span>@Html.Raw(item)</span>
+            <hr />
+        }
+    }
 </body>
 </html>

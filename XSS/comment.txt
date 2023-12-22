@@ -1,0 +1,7 @@
+aaa--sssdd
+aaa--ssss
+ffffffff--zzzzz
+ffffffff--zzzzz
+aaaaa--dddddd
+yyy--yyyy
+--<script>alert(document.cookie)</script>

@@ -21,6 +21,10 @@ namespace XSS.Controllers
         {
             HttpContext.Response.Cookies.Append("email", "fcakiroglu@outlook.com");
             HttpContext.Response.Cookies.Append("password", "1234");
+            if (System.IO.File.Exists("comment.txt"))
+            {
+                ViewBag.Comment = System.IO.File.ReadAllLines("comment.txt");
+            }
             return View();
         }
         [HttpPost]
@@ -29,7 +33,9 @@ namespace XSS.Controllers
 
             ViewBag.Name = name;
             ViewBag.Comment = comment;
-            return View();
+
+            System.IO.File.AppendAllText("comment.txt", $"{name}--{comment}\n");
+            return RedirectToAction("CommentAdd");
         }
 
 
