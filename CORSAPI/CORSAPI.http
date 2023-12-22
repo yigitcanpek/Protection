@@ -1,0 +1,6 @@
+@CORSAPI_HostAddress = http://localhost:5057
+
+GET {{CORSAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

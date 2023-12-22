@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPList", "IPList\IPList.csproj", "{02E7962F-5C2E-4187-92CC-C2A964D70FCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPList", "IPList\IPList.csproj", "{02E7962F-5C2E-4187-92CC-C2A964D70FCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORSAPI", "CORSAPI\CORSAPI.csproj", "{0F0C400C-1DE4-4AB5-87D3-7FFF5EE180EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CORSUI", "CORSUI\CORSUI.csproj", "{66E3065E-626C-498E-9AD2-F37C95056C26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{02E7962F-5C2E-4187-92CC-C2A964D70FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02E7962F-5C2E-4187-92CC-C2A964D70FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02E7962F-5C2E-4187-92CC-C2A964D70FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0C400C-1DE4-4AB5-87D3-7FFF5EE180EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0C400C-1DE4-4AB5-87D3-7FFF5EE180EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0C400C-1DE4-4AB5-87D3-7FFF5EE180EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0C400C-1DE4-4AB5-87D3-7FFF5EE180EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E3065E-626C-498E-9AD2-F37C95056C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E3065E-626C-498E-9AD2-F37C95056C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E3065E-626C-498E-9AD2-F37C95056C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E3065E-626C-498E-9AD2-F37C95056C26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
