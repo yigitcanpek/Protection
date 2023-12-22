@@ -11,19 +11,21 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddCors(x=>
 {
     //x.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
     x.AddPolicy("AllowSites", builder =>
-    builder.WithOrigins("https://localhost:7273", "https://www.mywebsite.com").AllowAnyHeader().AllowAnyMethod()
-    );
+    {
+        builder.WithOrigins("https://www.example.com").WithMethods("POST","GET").AllowAnyHeader().AllowCredentials();
+    });
 
     //x.AddPolicy("AllowSitesVariant", builder =>
     //{
     //    builder.WithOrigins("https://www.aaaaa.com").WithHeaders(HeaderNames.ContentType,"x-custom-header");
 
     //});
-    x.AddPolicy("AllowSitesVIP", builder =>
-    {
-        builder.WithOrigins("https://*.example.com").SetIsOriginAllowedToAllowWildcardSubdomains().AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader();
-    });
+    //x.AddPolicy("AllowSitesVIP", builder =>
+    //{
+    //    builder.WithOrigins("https://*.example.com").SetIsOriginAllowedToAllowWildcardSubdomains().AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader();
+    //});
 });
 var app = builder.Build();
 

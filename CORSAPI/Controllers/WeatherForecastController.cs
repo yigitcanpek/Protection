@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CORSAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [EnableCors("AllowSites")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -19,6 +21,8 @@ namespace CORSAPI.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
+        [EnableCors("AllowSites")]
+        //[DisableCors]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
