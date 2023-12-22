@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CommentAdd</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="name"/>
+        <textarea name="comment"></textarea>
+        <input type="submit" value="yorum gönder"/>
+    </form>
+    <h1>
+        Yorumlar
+    </h1>
+    <strong>@ViewBag.Name</strong>
+    <hr/>
+    <strong>@ViewBag.Comment</strong>
+
+    <h2> REFLECTED  ATTACK</h2>
+
+    <strong>@Html.Raw(ViewBag.Name)</strong>
+    <hr />
+    <strong>@Html.Raw(ViewBag.Comment)</strong>
+</body>
+</html>
