@@ -1,3 +1,5 @@
+using Microsoft.Net.Http.Headers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -8,7 +10,20 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(x=>
 {
-    x.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+    //x.AddDefaultPolicy(builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+    x.AddPolicy("AllowSites", builder =>
+    builder.WithOrigins("https://localhost:7273", "https://www.mywebsite.com").AllowAnyHeader().AllowAnyMethod()
+    );
+
+    //x.AddPolicy("AllowSitesVariant", builder =>
+    //{
+    //    builder.WithOrigins("https://www.aaaaa.com").WithHeaders(HeaderNames.ContentType,"x-custom-header");
+
+    //});
+    x.AddPolicy("AllowSitesVIP", builder =>
+    {
+        builder.WithOrigins("https://*.example.com").SetIsOriginAllowedToAllowWildcardSubdomains().AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader();
+    });
 });
 var app = builder.Build();
 
@@ -20,7 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors();
+app.UseCors("AllowSites");
 app.UseAuthorization();
 
 app.MapControllers();
